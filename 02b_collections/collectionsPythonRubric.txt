@@ -1,0 +1,35 @@
+Gaming Exercise #02: Collections 
+
+*** Adding Items ***
+Create a list variable named playerInventory. 
+Use a while loop to allow the user to enter 10 items into the player inventory. 
+Sort the inventory. 
+Display all items in the player inventory. 
+
+
+*** Removing Items *** 
+Use playerInventory with items created above.  
+Use a while loop, allow the player to remove up to five items from the player inventory. 
+Sort the inventory.   
+Display all remaining items in the player inventory. 
+
+*** Lists for Fixed Inventory System ***
+Comment out all the code for the Adding Items and Remove Items exercises. 
+Create a list variable named weaponList.   
+Iterate through the list of weapons and display the weapons currently in the player inventory. 
+
+*** Item Exists in Inventory ***
+Comment out the code for the Lists for Fixed Inventory System exercise. 
+Create a list named doorKeys. 
+Add at least five door keys that are lower-case color names stored as string data. Example:  "red" 
+Use a loop to iterate through the list and determine if the player has a needed item to proceed in the game. 
+
+*** Random Enemy Generator ***
+Comment out all previous code. 
+Create a list named enemyBase, add at least five values.  Each value should be a basic monster name such as "goblin" or "skeleton". 
+Create a list named enemyType, add at least five values.  Each value should be an enemy type such as "Warrior", "Archer", or "Wizard."
+Create a list named enemyPrefix, add at least five values.  Each value should be an 'adjective' that can describe a monster, such as "Fire-Breathing" or "Elite".  
+Use loops to iterate through your lists and create at least 15 unique enemy types. 
+
+
+
