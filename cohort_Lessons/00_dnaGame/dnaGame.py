@@ -33,16 +33,15 @@ def genRNA(dnaSequence: str) -> tuple:
 
 def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     isMatch = False
-    for eachBase in rnaSequence:
-        if eachBase == "U" and dnaSequence != "T":
-            isMatch = False
-            Break
-        elif eachBase == "T" and dnaSequence != "A":
-            isMatch = False
-        elif eachBase == "G" and dnaSequence != "C":
-            isMatch = False
-        elif eachBase == "C" and dnaSequence != "G":
-            isMatch = False
+    for rnaBase, dnaBase in zip(rnaSequence, dnaSequence):
+        if rnaBase == "U" and dnaBase != "T":
+            break
+        elif rnaBase == "T" and dnaBase != "A":
+            break
+        elif rnaBase == "G" and dnaBase != "C":
+            break
+        elif rnaBase == "C" and dnaBase != "G":
+            break
         else:
             isMatch = True
     return isMatch
