@@ -52,3 +52,5 @@ print(dna)
 
 rna = genRNA(dna)
 print(rna)
+
+print(checkSequence(dna, rna))
