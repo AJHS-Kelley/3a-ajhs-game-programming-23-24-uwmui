@@ -50,11 +50,11 @@ def calcScore(time: float, dnaSequence: str) -> int:
     score = 0
     if time < 5.0:
         score += 10000
-    elif time > 8.0:
+    elif time < 8.0:
         score += 7500
-    elif time > 11.0:
+    elif time < 11.0:
         score += 5000
-    elif time > 14.0:
+    elif time < 14.0:
         score += 2500
     else:
         score += 1000
@@ -66,7 +66,7 @@ def calcScore(time: float, dnaSequence: str) -> int:
     elif len(dnaSequence) >= 15:
         score *= 1.5
     elif len(dnaSequence) <= 5:
-        score *= 0.9 
+        score *= 0.8 
     return score
 
 gameIntro()
