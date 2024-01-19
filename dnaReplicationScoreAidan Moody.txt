@@ -1,1 +1,15 @@
 Test Message
+
+Score Generated On: 2024-01-19 12:51:31.461677
+Player Name: Aidan Moody
+DNA Sequence: G
+RNA Sequence: C
+Time: -2.2868454456329346
+Score: 8000.0
+
+Score Generated On: 2024-01-19 12:53:18.384340
+Player Name: Aidan Moody
+DNA Sequence: CTTTTG
+RNA Sequence: GAAAAC
+Time: 6.6963419914245605
+Score: 10000

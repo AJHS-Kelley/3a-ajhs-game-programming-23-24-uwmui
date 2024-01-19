@@ -28,7 +28,7 @@ def doTranscription(dnaSequence: str) -> tuple:
     rnaStart = time.time()
     rnaSequence = input("Please type the correct RNA sequence with no spaces. Then press enter.\n").upper()
     rnaStop = time.time()
-    rnaTime = rnaStart - rnaStop
+    rnaTime = rnaStop - rnaStart
     return (rnaSequence, rnaTime) # Tuples are ORDERED (index), UNCHANGEABLE, Allows Duplicates
 
 def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
@@ -48,13 +48,13 @@ def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
 
 def calcScore(rnaTime: float, dnaSequence: str) -> int:
     score = 0
-    if rnaTime < 5.0:
+    if rnaTime < 8.0:
         score += 10000
-    elif rnaTime < 8.0:
+    elif rnaTime < 10.0:
         score += 7500
-    elif rnaTime < 11.0:
+    elif rnaTime < 15.0:
         score += 5000
-    elif rnaTime < 14.0:
+    elif rnaTime < 20.0:
         score += 2500
     else:
         score += 1000
@@ -87,7 +87,7 @@ def saveScore(dna: str, rna: str, rnaTime: float, score: int) -> None:
     # "x" -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE
 
     # STEP 3: Write the data to the file.
-    saveData.write("Test Message\n")
+    saveData.write(f"\nScore Generated On: {datetime.datetime.now()}\nPlayer Name: {fullName}\nDNA Sequence: {dna}\nRNA Sequence: {rna}\nTime: {rnaTime}\nScore: {score}\n")
 
     # STEP 4: Close the file.
     saveData.close()
