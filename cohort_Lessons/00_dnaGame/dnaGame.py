@@ -20,13 +20,13 @@ def genDNA() -> str:
         basesGenerated += 1
     return dnaSequence
 
-def genRNA(dnaSequence: str) -> tuple: 
+def doTranscription(dnaSequence: str) -> tuple: 
     print (f"the DNA Sequence is {dnaSequence}.\n")
     print("You need to enter the correct RNA sequence based on this DNA sequence.\n")
     print("Remember, the RNA Base will have a U base to match with an A base from DNA.\n")
     # START TIMER
     rnaStart = time.time()
-    rnaSequence = input("Please type the correct RNA sequence with no spaces. Then press enter.\n")
+    rnaSequence = input("Please type the correct RNA sequence with no spaces. Then press enter.\n").upper()
     rnaStop = time.time()
     rnaTime = rnaStart - rnaStop
     return (rnaSequence, rnaTime) # Tuples are ORDERED (index), UNCHANGEABLE, Allows Duplicates
@@ -34,9 +34,9 @@ def genRNA(dnaSequence: str) -> tuple:
 def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     isMatch = False
     for rnaBase, dnaBase in zip(rnaSequence, dnaSequence):
-        if rnaBase == "U" and dnaBase != "T":
+        if rnaBase == "U" and dnaBase != "A":
             break
-        elif rnaBase == "T" and dnaBase != "A":
+        elif rnaBase == "A" and dnaBase != "T":
             break
         elif rnaBase == "G" and dnaBase != "C":
             break
@@ -69,12 +69,24 @@ def calcScore(time: float, dnaSequence: str) -> int:
         score *= 0.8 
     return score
 
+
+def saveScore(dna: str, rna: str, rnaTime: float, score: int) -> None: 
+    firstName = input("What is your first name?\n")
+    lastName = input("What is your last name?\n")
+    fullName = firstName + " " + lastName
+
+    # Saving Files Example
+    # Create the file name to use for your program.
+    fileName = "dnaReplicationScore" + fullName + ".txt"
+    # My Example: dnaReplicationScoreAidanMoody.txt
+
+
 gameIntro()
 
 dna = genDNA()
 print(dna)
 
-rna = genRNA(dna)
+rna = doTranscription(dna)
 print(rna)
 
 print(checkSequence(dna, rna[0]))
