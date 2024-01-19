@@ -78,7 +78,7 @@ def saveScore(dna: str, rna: str, rnaTime: float, score: int) -> None:
     # Saving Files Example
     # STEP 1: Create the file name to use for your program.
     fileName = "dnaReplicationScore" + fullName + ".txt"
-    # My Example: dnaReplicationScoreAidanMoody.txt
+    # My Example: dnaReplicationScoreAidan Moody.txt
     # STEP 2: Open the file "into" a variable.
     saveData = open(fileName, "a") # First Param = file name, Secpnd param = file mode.
     # Three Main File Modes
@@ -97,8 +97,6 @@ def saveScore(dna: str, rna: str, rnaTime: float, score: int) -> None:
 gameIntro()
 dna = genDNA()
 rna = doTranscription(dna)
-
-
 if checkSequence(dna, rna[0]):
     score = calcScore(rna[1], rna[0])
     saveScore(dna, rna[0], rna[1], score)
