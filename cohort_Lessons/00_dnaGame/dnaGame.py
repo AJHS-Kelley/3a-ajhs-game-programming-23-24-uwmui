@@ -76,9 +76,22 @@ def saveScore(dna: str, rna: str, rnaTime: float, score: int) -> None:
     fullName = firstName + " " + lastName
 
     # Saving Files Example
-    # Create the file name to use for your program.
+    # STEP 1: Create the file name to use for your program.
     fileName = "dnaReplicationScore" + fullName + ".txt"
     # My Example: dnaReplicationScoreAidanMoody.txt
+    # STEP 2: Open the file "into" a variable.
+    saveData = open(fileName, "a") # First Param = file name, Secpnd param = file mode.
+    # Three Main File Modes
+    # "w" -- CREATE FILE, IF FILE EXISTS, OVERWRITE THE CONTENTS
+    # "a" -- CREATE FILE, IF FILE EXISTS, APPEND TO END OF FILE
+    # "x" -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE
+
+    # STEP 3: Write the data to the file.
+    saveData.write("Test Message\n")
+
+    # STEP 4: Close the file.
+    saveData.close()
+
 
 
 gameIntro()
