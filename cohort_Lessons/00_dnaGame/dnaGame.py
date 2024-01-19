@@ -9,7 +9,7 @@ from random import choice # BRING JUST THE TOOL YOU NEED
 dnaBases = ["A", "T", "G", "C"] # Adenine, Thymine, Guanine, Cytosine
 
 def gameIntro() -> None:
-    print("Welcome to the DNA Replication game!!\n In this game you will be generating DNA sequences and matching the correct RNA sequences to them.\n For example; A to T, T to U, etc.\n")
+    print("Welcome to the DNA Replication game!!\n In this game you will be generating DNA sequences and matching the correct RNA sequences to them.\n For example; G to C, U to A, A to T, C to G.\n")
 
 def genDNA() -> str:
     basesGenerated = 0
@@ -46,15 +46,15 @@ def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
             isMatch = True
     return isMatch
 
-def calcScore(time: float, dnaSequence: str) -> int:
+def calcScore(rnaTime: float, dnaSequence: str) -> int:
     score = 0
-    if time < 5.0:
+    if rnaTime < 5.0:
         score += 10000
-    elif time < 8.0:
+    elif rnaTime < 8.0:
         score += 7500
-    elif time < 11.0:
+    elif rnaTime < 11.0:
         score += 5000
-    elif time < 14.0:
+    elif rnaTime < 14.0:
         score += 2500
     else:
         score += 1000
@@ -93,13 +93,14 @@ def saveScore(dna: str, rna: str, rnaTime: float, score: int) -> None:
     saveData.close()
 
 
-
+# Function Calls
 gameIntro()
-
 dna = genDNA()
-print(dna)
-
 rna = doTranscription(dna)
-print(rna)
 
-print(checkSequence(dna, rna[0]))
+
+if checkSequence(dna, rna[0]):
+    score = calcScore(rna[1], rna[0])
+    saveScore(dna, rna[0], rna[1], score)
+else:
+    print("Your RNA Sequence did not correctly match. Please try again.\n")
