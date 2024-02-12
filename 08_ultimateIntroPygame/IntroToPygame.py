@@ -8,8 +8,10 @@ clock = pygame.time.Clock()
 test_font = pygame.font.Font('08_ultimateIntroPygame/font\Pixeltype.ttf', 50)
 game_active = True
 
-sky_surface = pygame.image.load('08_ultimateIntroPygame\graphics\Sky.png').convert()
-ground_surface = pygame.image.load('08_ultimateIntroPygame\graphics\ground.png').convert()
+sky_surf = pygame.image.load('08_ultimateIntroPygame\graphics\Sky.png').convert()
+ground_surf = pygame.image.load('08_ultimateIntroPygame\graphics\ground.png').convert()
+# .covert() will modify an image to work with pygame.
+
 
 score_surf = test_font.render('My game', False, (64,64,64))
 score_rect = score_surf.get_rect(center = (400,50))
@@ -41,8 +43,8 @@ while True:
             snail_rect.left = 800
         
     if game_active:
-        screen.blit(sky_surface,(0,0))
-        screen.blit(ground_surface,(0,300))
+        screen.blit(sky_surf,(0,0))
+        screen.blit(ground_surf,(0,300))
         pygame.draw.rect(screen,'#c0e8ec',score_rect)
         pygame.draw.rect(screen,'#c0e8ec',score_rect,10)
         screen.blit(score_surf,score_rect)
