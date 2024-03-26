@@ -1,0 +1,17 @@
+Game Type: Pirate Themed RPG/Dungeon Crawler.
+
+Levels: Beach (with dock leading to a ship that takes you to the 2nd level), enemy ship interior.
+
+Enemies / Obstacles: Enemy pirates (ranged and melee), skeletons (melee only), pit fall traps, quicksand traps, trapped chests disguised as real chests, etc.
+
+Equipment: Cutlass, armor, possibly ranged options.
+
+Loot: Gold, better equipment, healing items.
+
+Win Condition: Defeating the boss at the end of the ship.
+
+Loss Condition: Reaching 0 health
+
+Difficulties: Safe, Normal
+    Safe: More health, less aggressive enemies, fewer enemies, lower, enemy health, etc.
+    Normal: normal
