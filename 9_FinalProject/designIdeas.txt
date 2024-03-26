@@ -14,4 +14,6 @@ Loss Condition: Reaching 0 health
 
 Difficulties: Safe, Normal
     Safe: More health, less aggressive enemies, fewer enemies, lower, enemy health, etc.
-    Normal: normal
+    Normal: normal 
+
+Control Scheme: WASD Movement, Space Bar to Interact, Cycle inventory 1-3 (3 Slots), Left Click to attack (hold for power attack), Enter to pause
