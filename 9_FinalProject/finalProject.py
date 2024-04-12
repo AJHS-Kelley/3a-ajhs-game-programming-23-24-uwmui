@@ -1,11 +1,18 @@
 import pygame
 from sys import exit
 
+pygame.init()
 screen = pygame.display.set_mode((800,400))
-pygame.display.set_caption('')
+pygame.display.set_caption('Test')
 clock = pygame.time.Clock()
-# test_font = pygame.font.Font('', 50)
 game_active = True
+startTime = 0
 
-pygame.display.update()
-clock.tick(60)
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+
+    pygame.display.update()
+    clock.tick(60)
