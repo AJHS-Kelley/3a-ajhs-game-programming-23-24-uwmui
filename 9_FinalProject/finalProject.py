@@ -5,20 +5,24 @@ pygame.init()
 screen = pygame.display.set_mode((1200,1000))
 pygame.display.set_caption('Test')
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('Kenney Pixel Square.ttf', 50)
 game_active = True
 startTime = 0
 
-sky_surf = pygame.image.load()
+title_surf = pygame.image.load('9_FinalProject\graphics/titlescreenbeta.png').convert
+title_rect = title_surf.get_rect(center = (1200,1000))
 
-score_surf = test_font.render('My game', False, (64,64,64))
-score_rect = score_surf.get_rect(center = (400,50))
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+    
+    if game_active:
+        screen.blit(title_surf,(0,0))
+        pygame.draw.rect(screen,'#c0e8ec',title_rect)
+        pygame.draw.rect(screen,'#c0e8ec',title_rect,10)
+        screen.blit(title_surf, title_rect)
 
     pygame.display.update()
     clock.tick(60)
