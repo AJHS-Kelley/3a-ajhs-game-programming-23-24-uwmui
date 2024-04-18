@@ -2,15 +2,14 @@ import pygame
 from sys import exit
 
 pygame.init()
-screen = pygame.display.set_mode((1200,1000))
+screen = pygame.display.set_mode((1100,1000))
 pygame.display.set_caption('Test')
 clock = pygame.time.Clock()
 game_active = True
 startTime = 0
 
-title_surf = pygame.image.load('9_FinalProject\graphics/titlescreenbeta.png').convert
-title_rect = title_surf.get_rect(center = (1200,1000))
-
+title_surf = pygame.image.load('9_FinalProject\graphics/titlescreenbeta.png').convert()
+title_rect = title_surf.get_rect(center = (0,0))
 
 while True:
     for event in pygame.event.get():
